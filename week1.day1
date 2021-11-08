@@ -1,0 +1,217 @@
+package week1.day1;
+
+public class EvenNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+System.out.println("The Even Numbers Are");
+		for(int i=0;i<=51;i++)
+		{
+	if(i % 2 == 0)
+	{
+		
+		System.out.println(i);
+	}
+		
+		
+		}
+		
+	
+	}
+
+}
+
+package week1.day1;
+
+public class Factorial {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a=1;
+		int num=5;
+	for(int i=1;i<=num;i++)
+	{
+		a = i * a;	
+		
+	}
+	System.out.println("Factorial is " +a);
+	
+	}
+
+}
+
+package week1.day1;
+
+public class FibonacciSeries {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int a=0,b=1,c,sum;
+		System.out.println("Fibonacci series is=" +a);
+		System.out.println(b);
+		for(int i=2;i<=8;i++)
+		{
+		c=a+b;
+		System.out.println(c);
+		a=b;
+		b=c;
+	
+	
+			
+		}
+		
+
+	}
+
+}
+
+package week1.day1;
+
+public class MyFirstJavaProgram {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+System.out.println("My java Program");
+	}
+
+}
+
+package week1.day1;
+
+public class NumberConvert {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int num=-24;
+		
+		if(num<0)
+		{
+			System.out.println("The number is negative number" +num);
+			
+			int newnum= num * -1;
+			
+			System.out.println("The converted positive number is" +newnum);
+		}
+		else
+		{
+			System.out.println("The number is positive number");
+		}
+
+	}
+
+}
+
+package week1.day1;
+
+public class PrineNum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int n=13;
+		boolean prime = true;
+		
+		for(int i=2;i<n;i++)
+		{
+			if(n % i == 0)
+			{
+				prime = false;
+				break;
+				
+			}}
+		if(prime == true)
+			{
+			
+			System.out.println("number is Prime");
+			}
+		else
+			{
+				System.out.println(" Not prime");
+			}
+		}
+		
+	}
+
+
+package week1.day1;
+
+public class ThrizFiz {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int number=30;
+		if(number % 3 == 0)
+		{
+		System.out.println("TRIZZ");	
+		}
+		
+		if(number % 5 == 0)
+		{
+		System.out.println("FIZZ");	
+		}
+		
+		if(number % 3 == 0 && number % 5 == 0)
+		{
+		System.out.println("TRIZZ & FIZZ");	
+		}
+		
+		
+	}
+
+}
+
+package week1.day1;
+
+public class ClassAndObjects {
+	String model;
+	String brandname;
+	int cost;
+	boolean touchscreen;
+	int resolution;
+	
+	public void makecall () {
+		
+		System.out.println("making call");		
+	}
+	public void paymoney()
+	{
+		System.out.println("pay money");
+	}
+	
+	public void viewgalary()
+	{
+		System.out.println("Viewgalary");
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ClassAndObjects samsung= new ClassAndObjects();
+		
+		samsung.model="honor8c";
+		samsung.brandname="samsung";
+		samsung.cost=12000;
+		samsung.touchscreen= true;
+		samsung.resolution= 245;
+		samsung.makecall();
+		samsung.paymoney();
+		samsung.viewgalary();
+		
+		System.out.println("All details of the samsung phone object attached");
+		System.out.println("samsung.model=" +samsung.model);
+		System.out.println("samsung.brandname=" +samsung.brandname);
+		System.out.println("samsung.cost=" +samsung.cost );
+		System.out.println("samsung.touchscreen=" +samsung.touchscreen);
+		System.out.println("samsung.resolution=" +samsung.resolution);
+		
+		
+		
+		
+		
+		
+	}
+
+}
