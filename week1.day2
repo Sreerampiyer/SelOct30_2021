@@ -1,0 +1,548 @@
+package week2.day1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class FindContact {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		WebDriverManager.chromedriver().setup();
+		 ChromeDriver driver=new ChromeDriver();
+		 driver.get("http://leaftaps.com/opentaps/control/main");
+		 driver.manage().window().maximize();
+		 
+		 driver.findElement(By.id("username")).sendKeys("DemoSalesManager");
+		 driver.findElement(By.id("password")).sendKeys("crmsfa");
+		 driver.findElement(By.className("decorativeSubmit")).click();
+		 driver.findElement(By.linkText("CRM/SFA")).click();
+		 driver.findElement(By.linkText("Contacts")).click();
+		 driver.findElement(By.linkText("Find Contacts")).click();
+		 driver.findElement(By.xpath("(//label[text()='Contact Id:']/following::input)[2]")).sendKeys("Babu");
+		 driver.findElement(By.xpath("//button[text()='Find Contacts']")).click();
+		 Thread.sleep(5000);
+		 
+		 String lead = driver.findElement(By.xpath("//div[@class='x-grid3-cell-inner x-grid3-col-partyId']//a")).getText();
+		 
+		 System.out.println(lead);
+		 driver.findElement(By.xpath("//div[@class='x-grid3-cell-inner x-grid3-col-partyId']//a")).click();
+		
+		 //driver.close();
+		 
+		 
+		 
+		 
+
+	}
+
+}
+
+package week2.day1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class FirstSelenium {
+
+	public static void main(String[] args) {
+
+		WebDriverManager.chromedriver().setup();
+		 ChromeDriver driver=new ChromeDriver();
+		 driver.get("http://leaftaps.com/opentaps/control/main");
+		 driver.manage().window().maximize();
+		 
+		 driver.findElement(By.id("username")).sendKeys("DemoSalesManager");
+		 driver.findElement(By.id("password")).sendKeys("crmsfa");
+		 driver.findElement(By.className("decorativeSubmit")).click();
+		 driver.findElement(By.linkText("CRM/SFA")).click();
+		 driver.findElement(By.linkText("Leads")).click();
+		 driver.findElement(By.linkText("Create Lead")).click();
+		 driver.findElement(By.id("createLeadForm_companyName")).sendKeys("TestLeaf");
+		 driver.findElement(By.id("createLeadForm_firstName")).sendKeys("Sree");
+		 driver.findElement(By.id("createLeadForm_lastName")).sendKeys("Ram");
+		 driver.findElement(By.name("submitButton")).click();
+		 
+		 String title= driver.getTitle();
+		 System.out.println("The titleis" +title);
+		 
+		 String text1=driver.findElement(By.id("viewLead_companyName_sp")).getText();
+		 System.out.println("Company name" +text1);
+		 String text2=driver.findElement(By.id("viewLead_firstName_sp")).getText();
+		 System.out.println("Fname" +text2);
+		 String text3=driver.findElement(By.id("viewLead_lastName_sp")).getText();
+		 System.out.println("Lname is" +text3);
+		 
+		 driver.close();
+		 
+		 
+		 
+		 
+
+	}
+
+}
+
+package week2.day1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class CreateContact {
+
+	public static void main(String[] args) {
+
+		WebDriverManager.chromedriver().setup();
+		 ChromeDriver driver=new ChromeDriver();
+		 driver.get("http://leaftaps.com/opentaps/control/main");
+		 driver.manage().window().maximize();
+		 
+		 driver.findElement(By.id("username")).sendKeys("DemoSalesManager");
+		 driver.findElement(By.id("password")).sendKeys("crmsfa");
+		 driver.findElement(By.className("decorativeSubmit")).click();
+		 driver.findElement(By.linkText("CRM/SFA")).click();
+		 driver.findElement(By.linkText("Contacts")).click();
+		 driver.findElement(By.linkText("Create Contact")).click();
+		 
+		driver.findElement(By.xpath("//input[@id='firstNameField']")).sendKeys("Sree");
+		driver.findElement(By.xpath("//input[@id='lastNameField']")).sendKeys("Ram");
+		driver.findElement(By.xpath("//input[@name='submitButton']")).click();
+		
+		String title=driver.getTitle();
+		System.out.println("The title = " +title);
+		
+		String fname=driver.findElement(By.xpath("//span[@id='viewContact_firstName_sp']")).getText();
+		System.out.println("The First name is ="  +fname);
+		
+		driver.close();
+		 
+		 
+		 
+		 
+
+	}
+
+}
+
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class CreateLead {
+
+	public static void main(String[] args) {
+
+		WebDriverManager.chromedriver().setup();
+		 ChromeDriver driver=new ChromeDriver();
+		 driver.get("http://leaftaps.com/opentaps/control/main");
+		 driver.manage().window().maximize();
+		 
+		 driver.findElement(By.id("username")).sendKeys("DemoSalesManager");
+		 driver.findElement(By.id("password")).sendKeys("crmsfa");
+		 driver.findElement(By.className("decorativeSubmit")).click();
+		 driver.findElement(By.linkText("CRM/SFA")).click();
+		 driver.findElement(By.linkText("Leads")).click();
+		 driver.findElement(By.linkText("Create Lead")).click();
+		 driver.findElement(By.id("createLeadForm_companyName")).sendKeys("TestLeaf");
+		 driver.findElement(By.id("createLeadForm_firstName")).sendKeys("Sree");
+		 driver.findElement(By.id("createLeadForm_lastName")).sendKeys("Ram");
+		 driver.findElement(By.name("submitButton")).click();
+		 
+		 String title= driver.getTitle();
+		 System.out.println("The titleis" +title);
+		 
+		 String text1=driver.findElement(By.id("viewLead_companyName_sp")).getText();
+		 System.out.println("Company name" +text1);
+		 String text2=driver.findElement(By.id("viewLead_firstName_sp")).getText();
+		 System.out.println("Fname" +text2);
+		 String text3=driver.findElement(By.id("viewLead_lastName_sp")).getText();
+		 System.out.println("Lname is" +text3);
+		 
+		 driver.close();
+		 
+		 
+		 
+		 
+
+	}package week1.day2;
+
+import java.util.Arrays;
+
+public class MissingElement {
+
+	public static void main(String[] args) {
+		
+		int[] arr = {1,2,4,3,6};
+		int n= arr.length;
+		Arrays.sort(arr);
+		System.out.println("Sorted array is" );
+		for(int i=0;i<arr.length;i++)
+		{
+		System.out.println("array["+i+"]" +arr[i]);	
+		}
+		
+		
+		int sum = (n+1) * ( n + 2 ) / 2;
+		
+		for(int j=0;j<arr.length;j++)
+		{
+			sum=sum-arr[j];
+		}
+		
+		System.out.println("missing is " +sum);
+			
+		
+		
+	}
+
+}
+
+package week1.day2;
+
+public class MyKid {
+
+	public static void main(String[] args) {
+	
+		MyMobile obja=new MyMobile();
+		
+		obja.makeCall();
+		obja.sendMsg();
+		System.out.println("model is =" +obja.model);
+		System.out.println("the cost is" +obja.cost);
+
+	}
+
+}
+
+package week1.day2;
+
+public class MyMobile {
+
+	String model="Honor 8C";
+	int cost=12000;
+	
+	public void makeCall()
+	{
+		System.out.println("Make call");
+		
+	}
+	
+	public void sendMsg()
+	{
+		System.out.println("Send msg");
+	}
+	
+	private void payBills()
+	{
+		System.out.println("Paying Bills");
+	}
+	
+	public static void main(String[] args) {
+	
+		MyMobile obj=new MyMobile();
+		
+		obj.makeCall();
+		obj.sendMsg();
+		obj.payBills();
+		System.out.println("model=" +obj.model);
+	}
+
+}
+
+package week1.day2;
+
+import java.lang.reflect.Array;
+
+public class PalindromeString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String str = "madam";
+		String nw="";
+		
+		for(int i=0;i<str.length();i++) {
+			char temp=str.charAt(i);
+			nw=temp+nw;		
+		}
+		System.out.println("The reversed string ==" +nw);
+		
+		if(str.equalsIgnoreCase(nw))
+		{
+			System.out.println("Palindrome");
+		}
+		else
+			System.out.println("Not Palindrome");
+		
+	}
+
+}
+
+package week1.day2;
+
+public class ToUpper {
+
+	public static void main(String[] args) {
+		
+		String str="welcome";
+		int leng = str.length();
+		
+		char[] charstr = str.toCharArray();
+		
+		for(int i=0;i<leng;i++)
+		{
+			System.out.println("The charecter array is Str["+i+"]" + charstr[i]);
+		}
+
+		for(int i=0;i<leng;i++)
+		{
+		if( i % 2!=0)
+		{
+		char ucase =Character.toUpperCase(charstr[i]);
+		System.out.println(ucase);
+		}
+		else
+			System.out.println(charstr[i]);
+		}
+
+	}
+
+}
+
+package week1.day2;
+
+import java.util.Arrays;
+
+public class Anagram {
+
+	public static void main(String[] args) {
+	
+		String str1="abcd";
+		String str2="dcba";
+		System.out.println("string 1=" +str1+ "string 2=" +str2);
+		
+		if(str1.length() != str2.length())
+		{
+			System.out.println("not anagram");
+			
+		}
+		
+			
+			char str1a[]=str1.toCharArray();
+			char str2a[]=str2.toCharArray();
+			
+			Arrays.sort(str1a);
+			Arrays.sort(str2a);
+			System.out.println("The sorted array is ");
+			System.out.println(str1a);
+			System.out.println(str2a);
+			
+			for(int i=0;i<str1.length();i++)
+			{
+				if(str1a[i] != str2a[i])
+				{
+					System.out.println("The stings are not Anagram");
+				}
+				else
+				{
+					System.out.println("strings are anagram");
+					break;
+				}
+			}
+			
+			
+		
+	}
+
+}
+
+package week1.day2;
+
+public class ArrayIntersection {
+
+	public static void main(String[] args) {
+		
+		int arr1[]={3,2,11,4,6,7};
+		int arr2[]={1,2,8,4,9,7};
+		
+		for(int i=0;i<arr1.length;i++)
+		{
+			for(int j=0;j<arr2.length;j++)
+			{
+				if(arr1[i]==arr2[j])
+					System.out.println("The intersected element are" +arr1[i]);
+			}
+		}
+
+	}
+
+}
+
+package week1.day2;
+
+import java.util.Arrays;
+
+public class ArrayLength {
+
+	public static void main(String[] args) {
+
+		int array[]= {45,54,78,23,11,30};
+		
+		int lengtharray = array.length;
+		System.out.println("Array Before Sorting");
+		for(int i = 0;i < lengtharray; i++)
+		{
+		System.out.println("Array["+i+"]" +array[i]);	
+		}
+		
+		Arrays.sort(array);
+		System.out.println("The sorted array is");
+		for(int i = 0;i < lengtharray; i++)
+		{
+		System.out.println("Array["+i+"]" +array[i]);	
+		}
+		
+		System.out.println("The largest element=" +array[lengtharray-1]);
+		System.out.println("The Second largest element=" +array[lengtharray-2]);
+		System.out.println("The Smallest element=" +array[0]);
+		System.out.println("The Second Smallest element=" +array[1]);
+
+	}
+
+}
+
+package week1.day2;
+
+public class Calculator {
+
+	public void add(int a,int b,int c) {
+		int d = a+b+c;
+		System.out.println("The addition of 3 numbers are =" +d);
+	}
+	
+	public void sub(int e,int f)
+	{
+		int g= e-f;
+		System.out.println("The substraction of 2 numbers is " +g);
+	}
+	
+	public void mul(double m,double n)
+	{
+		double o= m*n;
+		System.out.println("Multiiplication result=" +o);
+	}
+	
+	public void div(float x, float y)
+	{
+		float z= x/y;
+		System.out.println("the division result is=" +z);
+	}
+	public static void main(String[] args) {
+
+		Calculator calc = new Calculator();
+		calc.add(7, 6, 11);
+		calc.sub(16, 5);
+		calc.mul(12, 7);
+		calc.div(22,7);
+
+	}
+
+}
+
+package week1.day2;
+
+public class CharOccurance {
+
+	public static void main(String[] args) {
+		
+		String str= "Welcome to Chennai";
+		char search='n';
+		int count=0;
+		
+		for(int i=0;i<str.length();i++)
+		{
+		if(str.charAt(i)==search)
+		{
+			count++;
+		}
+		
+		}
+		
+		System.out.println("Total Occurance in the string is==" +count);
+	}
+
+}
+
+package week1.day2;
+
+public class DuplicatedinArray {
+
+	public static void main(String[] args) {
+	
+		
+		int arr[]= {14,12,13,11,15,14,18,16,17,19,18,17,20};
+		System.out.println("The duplicate in the array is");
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=i+1;j<arr.length;j++)
+			{
+				if(arr[i]==arr[j])
+				{
+					System.out.println(arr[i]);
+				}
+			}
+		}
+		
+		
+	}
+
+}
+
+package week1.day2;
+
+public class FindTypes {
+
+	public static void main(String[] args) {
+		String test = "$$ Welcome to 2nd Class of Automation $$ ";
+		int  letter = 0, space = 0, num = 0, specialChar = 0;
+
+		char[] str=test.toCharArray();
+		for(int i=0;i<test.length();i++)
+		{
+			if(Character.isLetter(i))
+			{
+				letter++;
+			}
+			else if(Character.isSpaceChar(i))
+			{
+				space++;
+			}
+			else if(Character.isDigit(i))
+			{
+				num++;
+			}
+			else 
+			{
+				specialChar++;
+			}
+		}
+		
+		System.out.println("letter = " + letter);
+		System.out.println("space= " + space);
+		System.out.println("number = " + num);
+		System.out.println("specialCharcter = " + specialChar);
+
+	}
+
+}
+
+
+}
